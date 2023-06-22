@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="boss">
+  <head>
+    <title>To Do List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= kindOfDay %></h1>
+      <img class="logo" src="/images/logo.png" alt="Logo">
+
+      <ul>
+        <% for(var i=0; i<arrDataItem.length; i++){ %>  
+          <li>
+            <input type="checkbox" id="item<%= i %>">
+            <label for="item<%= i %>"><%= arrDataItem[i].name %></label>
+          </li>
+        <% } %>
+      </ul>
+
+      <form action="/" method="post">
+        <input type="text" name="item" placeholder="Add an item">
+        <button type="submit" name="submit">+</button>
+      </form>
+    </div>
+  </body>
+</html>
